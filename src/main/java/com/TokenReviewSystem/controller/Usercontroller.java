@@ -1,7 +1,5 @@
 package com.TokenReviewSystem.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +22,6 @@ public class Usercontroller {
 	@Autowired
 	UserServices services;
 	
-	@RequestMapping("/getuserdata")
-	public ResponseEntity<List<UserloginData>> alldata(){
-		return services.getAlluaerdata();
-	}
 
 	@PostMapping("/AddUser")
 	public ResponseEntity<UserloginData> userlog(@RequestBody UserloginData userlog) {
@@ -56,10 +50,6 @@ public class Usercontroller {
 			@PathVariable("prevpassword") String prevpassword,@PathVariable("newpassword") String newpassword){
 		return services.forgetpassword(email,prevpassword,newpassword);
 	}
-	//no need
-//	@GetMapping("/getid/{email}")
-//	public Optional<UserData> ff(@PathVariable("email") String email){
-//		return services.UpdateData(email);
-//	}
+
 
 }

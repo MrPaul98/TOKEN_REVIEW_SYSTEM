@@ -1,6 +1,5 @@
 package com.TokenReviewSystem.services;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,17 +40,6 @@ public class UserServices {
 		}
 	}
 	
-	
-	public ResponseEntity<List<UserloginData>> getAlluaerdata() {
-
-		if(userrepository.findAll().size() > 0) {
-		return new ResponseEntity<List<UserloginData>>(userrepository.findAll(),HttpStatus.OK);
-		}
-		else
-		{
-			return new ResponseEntity<List<UserloginData>>(HttpStatus.NOT_FOUND);
-		}
-	}
 
     public ResponseEntity<UserloginData> login(String emailID, String password, String customertype) {
     	
@@ -110,14 +98,5 @@ public class UserServices {
 	} 
 	
 	
-	//no need for reference
-//	public Optional<UserData> UpdateData(String email) {
-//		List<UserloginData> data = userrepository.findalldatafromemail(email);
-//		int ID = userrepository.findidandupdate(email);
-//		return userdatarepository.findById(ID);
-////		for (UserloginData userloginData : data) {
-////			return (List<UserData>) (userloginData.getClass(UserData.class));
-////		}
-//	
-//	}
+
 }
